@@ -28,8 +28,15 @@ public class DogOwnerService {
         return dogOwnerRepository.save(dogOwner);
     }
     public DogOwner authenticateDogOwner(DogOwner loginDto) throws Exception {
-        return dogOwnerRepository.findByEmail(loginDto.getEmail())
-                .filter(dogOwner -> passwordEncoder.matches(loginDto.getPassword(), dogOwner.getPassword()))
+        DogOwner dogOwner = dogOwnerRepository.findByEmail(loginDto.getEmail())
+                .filter(owner -> passwordEncoder.matches(loginDto.getPassword(), owner.getPassword()))
                 .orElseThrow(() -> new Exception("Invalid credentials"));
+        
+        // Nullify the password before sending it back for security reasons
+        dogOwner.setPassword(null);
+        
+        return dogOwner;
     }
+
+    
 }

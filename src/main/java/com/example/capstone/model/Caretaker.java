@@ -7,17 +7,25 @@ public class Caretaker {
     private String password;
     private String phone;
     private String photo;
+    private String hourlyRate;
+    private String yearOfExperience;
+    private String caretakerRating;
+
 
     public Caretaker() {
     }
 
-    public Caretaker(String firstName, String lastName, String email, String password, String phone, String photo) {
+    public Caretaker(String firstName, String lastName, String email, String password, String phone, 
+                     String photo, String hourlyRate, String yearOfExperience, String caretakerRating) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.phone = phone;
         this.photo = photo;
+        this.hourlyRate = hourlyRate;
+        this.yearOfExperience = yearOfExperience;
+        this.caretakerRating = caretakerRating;
     }
 
     // Getters and setters for all the fields
@@ -67,5 +75,29 @@ public class Caretaker {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public String getHourlyRate() {
+        return hourlyRate;
+    }
+
+    public void setHourlyRate(String hourlyRate) {
+        this.hourlyRate = hourlyRate;
+    }
+
+    public String getYearOfExperience() {
+        return yearOfExperience;
+    }
+
+    public void setYearOfExperience(String yearOfExperience) {
+        this.yearOfExperience = yearOfExperience;
+    }
+
+    public String getCaretakerRating() {
+        return caretakerRating;
+    }
+
+    public void setCaretakerRating(String caretakerRating) {
+        this.caretakerRating = caretakerRating;
     }
 }

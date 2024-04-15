@@ -5,7 +5,7 @@ import com.example.capstone.service.SupportInquiryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.Map;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -41,4 +41,10 @@ public class SupportInquiryController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @PatchMapping("/{id}")
+public ResponseEntity<SupportInquiry> updateInquiryStatus(@PathVariable String id, @RequestBody Map<String, String> updates) {
+    SupportInquiry updatedInquiry = service.updateInquiryStatus(id, updates.get("status"));
+    return updatedInquiry != null ? ResponseEntity.ok(updatedInquiry) : ResponseEntity.notFound().build();
+}
 }

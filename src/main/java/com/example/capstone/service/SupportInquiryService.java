@@ -29,4 +29,13 @@ public class SupportInquiryService {
         Optional<SupportInquiry> optionalInquiry = repository.findById(id);
         return optionalInquiry.orElse(null);
     }
+
+    public SupportInquiry updateInquiryStatus(String id, String status) {
+        SupportInquiry inquiry = getInquiryById(id); // Changed from findInquiryById to getInquiryById
+        if (inquiry != null) {
+            inquiry.setStatus(status); // Make sure this method exists in your model class
+            return repository.save(inquiry); // Changed from eventRepository to repository
+        }
+        return null;
+    }
 }

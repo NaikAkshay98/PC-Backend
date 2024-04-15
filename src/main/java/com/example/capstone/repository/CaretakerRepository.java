@@ -11,3 +11,5 @@ public interface CaretakerRepository extends MongoRepository<Caretaker, String> 
     Optional<Caretaker> findById(String id);
     Optional<Caretaker> findByEmail(String email);
 }
+
+
