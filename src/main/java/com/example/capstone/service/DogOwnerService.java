@@ -5,6 +5,7 @@ import com.example.capstone.repository.DogOwnerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import java.util.Optional;
 
 @Service
 public class DogOwnerService {
@@ -36,6 +37,11 @@ public class DogOwnerService {
         dogOwner.setPassword(null);
         
         return dogOwner;
+    }
+
+    public DogOwner getDogOwnerByEmail(String email) throws Exception {
+        return dogOwnerRepository.findByEmail(email)
+                .orElseThrow(() -> new Exception("Dog owner not found"));
     }
 
     

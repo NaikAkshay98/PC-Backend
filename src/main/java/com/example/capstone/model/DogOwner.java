@@ -6,18 +6,23 @@ public class DogOwner {
     private String email;
     private String password;
     private String phone;
-    private String photo; // Optional
+    private String photo;
+    private String aboutDog;
+    private String dogName;
+
 
     public DogOwner() {
     }
 
-    public DogOwner(String firstName, String lastName, String email, String password, String phone, String photo) {
+    public DogOwner(String firstName, String lastName, String email, String password, String phone, String photo, String aboutDog, String dogName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.phone = phone;
         this.photo = photo;
+        this.aboutDog = aboutDog;
+        this.dogName = dogName;
     }
 
     public String getFirstName() {
@@ -66,5 +71,21 @@ public class DogOwner {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public String getAboutDog() {
+        return aboutDog;
+    }
+
+    public void setAboutDog(String aboutDog) {
+        this.aboutDog = aboutDog;
+    }
+
+    public String getDogName() {
+        return dogName;
+    }
+
+    public void setDogName(String dogName) {
+        this.dogName = dogName;
     }
 }
