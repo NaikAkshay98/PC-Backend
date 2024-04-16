@@ -18,10 +18,11 @@ public class SupportInquiry {
     public SupportInquiry() {
     }
 
-    public SupportInquiry(String id, String email, String inquiry, Date date) {
+    public SupportInquiry(String id, String email, String inquiry, String status, Date date) {
         this.id = id;
         this.email = email;
         this.inquiry = inquiry;
+        this.status = status;
         this.date = date; // Set the date in constructor
     }
 
